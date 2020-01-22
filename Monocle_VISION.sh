@@ -1,8 +1,8 @@
 #!/bin/sh
 
-###########
-#Prototype#
-###########
+##################
+#Proof of concept#
+##################
 if [ $# -eq 0 ]; then
  echo "Usage: Enter a set of folders to search"
  echo "EX: ./script.sh /var/"
@@ -13,9 +13,9 @@ fi
 
 echo "[+] Beginning execution"
 echo "[+] It is not recommended to run this from the / directory, as it may cause instability"
-touch prowledFiles.txt
-ls -R $1/*  > prowledFiles.txt
-echo "######################################" >> prowledFiles.txt
+touch spottedFiles.txt
+ls -R $1/*  > spottedFiles.txt
+echo "######################################" >> spottedFiles.txt
 echo "[+] System Search Complete"
 echo "######################################"
 echo "[+] Now executing directory dive"
