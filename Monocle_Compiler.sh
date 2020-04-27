@@ -5,7 +5,7 @@ if [ $# -eq 0 ];
 then
 	echo "USAGE: for bulk compilation of scripts from one directory to be output to another "
 	echo "Example: "
-	echo "./compiler.sh -A ~/Documents/Code/UncompiledFiles filename.c filename.c filename.c "
+	echo "./Monocle_Compiler.sh -En ~/Documents/Code/UncompiledFiles filename.c filename.c filename.c "
 elif [ $1 == "-h" ];
 then
 	echo "[+] '-h' Display this list"
