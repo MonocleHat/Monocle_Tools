@@ -18,22 +18,58 @@ then
 	then
 		shift
 		directory=$1
-		echo "[DEBUG] Dir: $directory"
 		shift
+		echo -n "Enter output directory (relative path, dont end with '/'): "
+		read userdir
+		dest=$userdir
 		for y in $@
 		do
 			filearr+=($y)
-			echo "[DEBUG] ArrFiles:  ${filearr[@]}"
 		done
 		for x in ${filearr[@]}
 		do
 			echo -n  "Please enter an output filename for $x: "
 			read filename
 			outputnames+=($filename)
-			echo "[DEBUG] output: ${outputnames[@]}"
+		done
+		i=0
+		for z in ${filearr[@]}
+		do
+			
+			gcc $directory/$z -o $dest/${outputnames[$i]}
+			((i++))
 		done
 	fi
-
+	if [ $1 == '-Dis' ];
+	then
+		shift
+		directory=$1
+		shift
+		echo -n "Enter output directory (relative path, dont end with '/'): "
+		read userdir
+		dest=$userdir
+		for y in $@
+		do
+			filearr+=($y)
+		done
+		for x in ${filearr[@]}
+		do
+			echo -n  "Please enter an output filename for $x: "
+			read filename
+			outputnames+=($filename)
+		done
+		i=0
+		for z in ${filearr[@]}
+		do
+			
+			gcc $directory/$z -o $dest/${outputnames[$i]} -fno-stack-protector
+			((i++))
+		done
+	echo "[+] Remember to disable ASLR before testing your scripts"
+	echo "[+] Use: sudo bash -c 'echo 0 > /proc/sys/kernel/randomize_va_space' to disable it"
+	echo "[+] Renable after testing to prevent unintentional overflows of programs that could be critical to system functions or production networks"
+	fi
+	
 fi
 
 
