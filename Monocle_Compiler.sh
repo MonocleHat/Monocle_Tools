@@ -9,13 +9,13 @@ then
 elif [ $1 == "-h" ];
 then
 	echo "[+] '-h' Display this list"
-	echo "[+] '-En' Regularly compile the files using gcc with stack protections/canaries"
-	echo "[+] '-Dis' Disable stack protections for gcc compiled programs, will not work if ASLR not disabled"
+	echo "[+] '-E' Regularly compile the files using gcc with stack protections/canaries"
+	echo "[+] '-D' Disable stack protections for gcc compiled programs, will not work if ASLR not disabled"
 	echo "[+] Disabling ASLR on a system: 'sudo bash -c 'echo 0 > /proc/sys/kernel/randomize_va_space'"
 	echo "[+] If it doesnt work for your system then there may be different instructions in place for your kernel. Read your manuals"
 elif [ $# -gt 0 ];
 then
-	if [ $1 == '-En' ];
+	if [ $1 == '-E' ];
 	then
 		shift
 		directory=$1
@@ -41,7 +41,7 @@ then
 			((i++))
 		done
 	fi
-	if [ $1 == '-Dis' ];
+	if [ $1 == '-D' ];
 	then
 		shift
 		directory=$1
