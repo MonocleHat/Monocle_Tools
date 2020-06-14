@@ -16,3 +16,6 @@ The user runs the script, providing arguments to enable or disable ASLR protecti
 syntax looks like: ./Monocle_COMPILER.sh -En ~/Documents/Code/notCompiled ~/Documents/Code/Compiled fileone.c filetwo.c filethree.c
 or
 ./Monocle_Compiler.sh -<aslr on/off> <source directory (not ending in '/')> <destination directory (not ending in '/')> <files>
+
+# Monocle_SERVER
+Simple python server that can be used to remotely execute commands on a server, check the time, and test connectivity to said server. Very basic, not much utility, but a decent experiment in python stuff. 
