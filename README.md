@@ -1,5 +1,5 @@
 # Monocle_Tools
-Creating a set of simple tools for enumeration/scanning/etc, along with other tools for regular use. 
+a set of simple tools and scripts
 
 # Monocle_VISION
 Allows the user to scan an entirety of a directory, recursively, and list off each directory, and each file within.
